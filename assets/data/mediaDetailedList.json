@@ -79,7 +79,7 @@
     "releaseYear": 2023,
     "ageRestriction": "18+",
     "thumbnail": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/movie6.jpg",
-    "trailer": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "trailer": "https://dybk2jcmtnsla.cloudfront.net/output/movies/title3-movie/test_3/test_3.m3u8",
     "seasons": [
       {
         "seasonName": "Season 1",
@@ -91,7 +91,7 @@
             "episodeNumber": 1,
             "duration": 81,
             "episodeThumbnail": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/ep4.jpg",
-            "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            "videoUrl": "https://dybk2jcmtnsla.cloudfront.net/output/movies/title3-movie/test_3/test_3.m3u8"
           },
           {
             "id": "the-last-of-us-s1e1-s1e2",
@@ -100,7 +100,7 @@
             "episodeNumber": 2,
             "duration": 53,
             "episodeThumbnail": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/ep5.jpg",
-            "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+            "videoUrl": "https://dybk2jcmtnsla.cloudfront.net/output/movies/presentationesikaspace/esika/esika.m3u8"
           }
         ]
       },

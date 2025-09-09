@@ -15,7 +15,8 @@ export default function MediaDetails() {
   const { id } = useLocalSearchParams()
   const [selectedSeason, setSelectedSeason] = useState<string>("Season 1");
   const [seasonEpisodes, setSeasonEpisodes] = useState<Episode[]>([]);
-  const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
+  //const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
+  const [episodeLoadingId, setEpisodeLoadingId] = useState<string | null>(null);
   const videoViewRef = useRef<VideoView | null>(null);
   const mediaItem = mediaDetailedList.find((media) => media.id === id)
 
@@ -59,10 +60,12 @@ export default function MediaDetails() {
     player.showNowPlayingNotification=true; // show in lock screen
   })
 
-  const onPlayMediaPressed=async(video?:string)=>{
+  const onPlayMediaPressed=async(video?:string, episodeId?:string)=>{
     trailerPlayer.pause();
-    if(video){
+    if(video && episodeId){
+      setEpisodeLoadingId(episodeId);
      await mediaPlayer.replaceAsync(video);
+      setEpisodeLoadingId(null);
     }
     videoViewRef.current?.enterFullscreen();// works only on real device, full screen
     mediaPlayer.play();
@@ -77,7 +80,10 @@ export default function MediaDetails() {
         />
         <FlatList
           data={seasonEpisodes} // Wrapping episodes in an array to use FlatList
-          renderItem={({ item }) => <EpisodeListItem episode={item} onPlayMediaPressed={onPlayMediaPressed} />}
+          renderItem={({ item }) => <EpisodeListItem episode={item} onPlayMediaPressed={onPlayMediaPressed} 
+          isEpisodeLoading={episodeLoadingId === item.id} 
+          
+          />}
           ListHeaderComponent={
             <View style={{ padding: 10, gap: 10 }}>
                 <MediaInfo

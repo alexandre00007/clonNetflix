@@ -9,7 +9,7 @@ type MediaInfoProps = {
   description: string;
   type: string;
   nrOfSeasons?: number;
-  onPlayMediaPressed: () => void;
+  onPlayMediaPressed: (video?:string, episodeId?:string) => Promise<void>;
 }
 
 export default function MediaInfo(props: MediaInfoProps) {
