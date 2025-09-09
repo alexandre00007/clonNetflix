@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { ThemeProvider,DarkTheme } from "@react-navigation/native";
+import { PaperProvider } from "react-native-paper";
 export default function RootLayout() {
     const myTheme = {
         ...DarkTheme,
@@ -12,13 +13,15 @@ export default function RootLayout() {
  
   return (
     <ThemeProvider value={myTheme}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
+      <PaperProvider>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
+      </PaperProvider>
     </ThemeProvider>
   );
 }
